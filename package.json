@@ -6,7 +6,10 @@
   "dependencies": {
     "tslint-eslint-rules": "^5.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/juicecube/mlz-lint.git"
   },
-  "author": "",
+  "author": "luoqian",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/juicecube/mlz-lint/issues"
