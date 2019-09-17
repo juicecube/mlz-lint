@@ -23,8 +23,30 @@
 
 
 #### Usage
-1. 
-2. 与Prettier集成
-可以根据tslint规则对现有项目的代码进行格式化
+- `npm i -D mlz-lint`
+
+- 
+```js
+// tsconfig.json
+{
+  "extends": "./node_modules/mlz-lint/tsconfig.json",
+  "compilerOptions": {
+    // 自定义
+  }
+}
+
+// tslint.json
+{
+  "extends": [
+    "mlz-lint/tslint.json", 
+  ],
+  "rules": {
+    // 自定义
+  }
+}
+``` 
+
+#### Prettier集成
+
 
 
