@@ -1,10 +1,14 @@
+
+
+统一不同项目间的tslint规范，在此规范和react规范的基础上再出一份ts最佳实践的文档。
+
 # mlz-lint
-一个包含eslint，stylelint, tsconfig的配置文件合集
+一个包含eslint，stylelint, tsconfig的配置文件合集。方便不同项目间统一和共享ts规范。
 
 ## tsconfig  
 |  配置  | 值 | 原因 |
 |  ----  | ----  | ---- |
-| target  | "es2015" | 保留import语法，以便实现模块按需加载，配合`@babel/preset-env`
+| target  | es2015 | 保留import语法，以便实现模块按需加载，配合`@babel/preset-env`
 | noImplicitAny  | true | 类型安全更加严格
 | strictNullChecks  | true | null 和 undefined检查，避免错误
 | noUnusedLocals  | true | 不需要不用的变量
