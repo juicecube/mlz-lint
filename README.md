@@ -5,7 +5,7 @@
 # mlz-lint
 一个包含eslint，stylelint, tsconfig的配置文件合集。方便不同项目间统一和共享ts规范。
 
-## tsconfig  
+#### tsconfig  
 |  配置  | 值 | 原因 |
 |  ----  | ----  | ---- |
 | target  | es2015 | 保留import语法，以便实现模块按需加载，配合`@babel/preset-env`
