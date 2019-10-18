@@ -38,7 +38,6 @@
 #### Usage
 - `npm i -D mlz-lint`
 
-- 
 ```js
 // tsconfig.json
 {
