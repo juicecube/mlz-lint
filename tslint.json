@@ -71,7 +71,7 @@
     ],
     "align": [true, "parameters", "statements"],  // 强制竖直方向对其
     "class-name": true, //class & interface首字母大写
-    "member-access": true, //  类成员必须声明 private public ....
+    "member-access": false, //  类成员必须声明 private public ....
     "new-parens": true,  //禁止省略new关键字的圆括号
     "no-consecutive-blank-lines": true,  // 不允许空行
     "no-reference": true,  //  禁止使用/// <reference path=> 导入 ，使用import代替
@@ -87,7 +87,7 @@
     "promise-function-async": true,  // 要求所有返回promise的函数或方法前面都加上async
     "quotemark": [true, "single", "avoid-escape", "jsx-double"],  // 引号的使用规则
     "semicolon": [true, "always"],  // 分号的使用规则
-    "variable-name": [true, "ban-keywords"], // 变量命名规则
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"], // 变量命名规则
     "object-curly-spacing": [  // 大括号前后是否留空格
       true,
       "always",
