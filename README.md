@@ -10,21 +10,29 @@
 |  配置  | 值 | 原因 |
 |  ----  | ----  | ---- |
 | target  | es2015 | 保留import语法，以便实现模块按需加载，配合`@babel/preset-env`
-| noImplicitAny  | true | 类型安全更加严格
-| strictNullChecks  | true | null 和 undefined检查，避免错误
+| module | commonjs | 使用commonjs的方式组织代码
+| lib | ["dom", "es2015", "es2016.array.include"] | 把这些库文件包含进编译的过程中保证编译的正确快速执行
+| allowJs  | true | 允许检查js文件，保证js文件的质量
+| checkJs  | true | 允许ts检查js文件的错误，保证js文件的质量
+| jsx  | preserve | 输出.jsx且dom编译后还是原dom方便后续babel等编译
+| sourceMap  | true | 输出.map文件，方便调试
+| outDir  | build | 指定输出目录为build
+| removeComments  | true | 删除编译后的所有的注释（使代码安全简洁，减少代码量）
+| noImplicitAny  | true | 类型安全更加严格（强制类型检验）
+| strictNullChecks  | true | null 和 undefined检查，避免错误（严格空校验）
 | noUnusedLocals  | true | 不需要不用的变量
-| moduleResolution  | node | 模块解析策略
+| noImplicitReturns  | true | 函数的所有路径都必须有返回值
+| moduleResolution  | node | 使用node的模块解析策略
+| baseUrl | . | 把tsconfig所在的目录当成是解析非相对模块的基准目录
+| paths | - | 模块名到基于 baseUrl 的路径映射的列表
+| allowSyntheticDefaultImports | true | 允许从没有设置默认导出的模块中默认导入
+| experimentalDecorators | true | 启用装饰器
+
+
 
 #### tslint
 
-|  配置  | 值 | 原因 |
-|  ----  | ----  | ---- |
-| no-parameter-reassignment  | true | 禁止对函数的参数重新赋值
-| prefer-object-spread  | true | `object-spread`比`Object.assign`ts类型检查更完善
-| comment-format  | true | 限制单行注释的规则为空格开头
-| object-literal-shorthand  | true | 必须使用 `a = {b}` 而不是 `a = {b: b}`
-| no-magic-numbers  | `[true, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000, 10000, 200]` | 禁止使用魔法数字，仅允许使用一部分白名单中的数字，魔法数字无法理解
-| object-curly-spacing  | true | 保持大括号内的空格一致性
+详情请见tslint.json
 
 
 #### Usage

@@ -3,44 +3,48 @@
     "tslint-eslint-rules"
   ],
   "rules": {
-    "no-parameter-reassignment": true,
-    "prefer-object-spread": true,
-    "comment-format": [true, "check-space"],
-    "object-literal-shorthand": true,
-    "no-magic-numbers": true,
-    "arrow-parens": true,
-    "arrow-return-shorthand": true,
-    "array-type": [true, "array"],
-    "await-promise": true,
-    "curly": true,
-    "no-arg": true,
-    "no-conditional-assignment": true,
-    "no-construct": true,
-    "no-debugger": true,
-    "no-duplicate-variable": true,
-    "no-eval": true,
-    "no-floating-promises": false,
-    "no-for-in-array": false,
-    "no-misused-new": true,
-    "no-null-keyword": false,
-    "no-shadowed-variable": true,
-    "no-unsafe-finally": true,
-    "no-unused-variable": false,
-    "no-use-before-declare": false,
-    "indent": [true, "spaces"],
-    "linebreak-style": [true, "LF"],
-    "label-position": true,
-    "no-default-export": true,
-    "no-string-throw": true,
-    "no-trailing-whitespace": true,
-    "prefer-const": false,
-    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
-    "typedef": [
-        true,
-        "property-declaration"
+    "no-parameter-reassignment": true, // 禁止对函数的参数重新赋值
+    "comment-format": [true, "check-space"], // 所有单行注释开头都需要一个空格
+    "object-literal-shorthand": true,  // 必须使用 `a = {b}` 而不是 `a = {b: b}`
+    "no-magic-numbers": [true, {"allowed-numbers": [ 0, 1, 10, 100, 1000, 10000, 200], "ignore-jsx": true}], // 禁止使用魔法数字
+    "arrow-parens": true, // //箭头函数定义的参数需要括号
+    "arrow-return-shorthand": true, // 箭头函数返回值不带花括号
+    "array-type": [true, "array"], // 强制使用“T[]”来做类型限制
+    "await-promise": true, // await后面必须是promise
+    "curly": true,  // for、if、do、while 要有花括号
+    "no-arg": true,  // 不允许使用 argument.callee
+    "no-conditional-assignment": true,  // 不允许条件语句（do-while、for、if、while）赋值操作 (=)
+    "no-construct": true, // 不允许使用 String/Number/Boolean的构造函数
+    "no-debugger": true, //不允许使用debugger
+    "no-duplicate-variable": true, // 禁止重复变量声明
+    "no-eval": true,  // //不允许使用eval(保证安全)
+    "no-floating-promises": false, // 必须正确处理promise的返回函数
+    "no-for-in-array": false,  //不允许使用for in 遍历数组
+    "no-misused-new": true, // /禁止定义构造函数或new class
+    "no-null-keyword": false, // 不允许使用null关键字
+    "no-shadowed-variable": true, // // 防止变量阴影
+    "no-unsafe-finally": true, // 禁止在finally中加入流程控制语句（return、continue、break、throw） 
+    "no-unused-variable": false,  // 不允许存在没有用到的imports, variables, functions and private class members
+    "no-use-before-declare": false,  // 在定义之前不可使用变量
+    "indent": [true, "spaces", 2],  //缩进强制2个字符
+    "linebreak-style": [true, "LF"], // 换行风格（\n） 
+    "label-position": true,  // 允许标签出现在do/for/while/switch里面
+    "no-default-export": true,  // 是否允许使用default exports
+    "no-string-throw": true,  // 不能直接抛出字符串
+    "no-trailing-whitespace": true, // 禁止尾部空格
+    "prefer-const": true,  // 如果一个变量从不重新分配，使用const声明
+    "trailing-comma": [  //尾随逗号的校验
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
     ],
-    "typedef-whitespace": 
-    [
+    "typedef": [  // 需要定义的类型
+      true,
+      "property-declaration"
+    ],
+    "typedef-whitespace": [  // 在类型定义的时候，是否允许使用空格
       true,
       {
         "call-signature": "space",
@@ -57,21 +61,22 @@
         "variable-declaration": "nospace"
       }
     ],
-    "whitespace": [
+    "whitespace": [ // 空格校验
         true,
         "check-branch",
         "check-module",
+        "check-decl",
         "check-operator",
         "check-separator"
     ],
-    "align": [true, "parameters", "statements"],
-    "class-name": true,
-    "member-access": false,
-    "new-parens": true,
-    "no-consecutive-blank-lines": true,
-    "no-reference": true,
-    "one-variable-per-declaration": [true, "ignore-for-loop"],
-    "one-line": [
+    "align": [true, "parameters", "statements"],  // 强制竖直方向对其
+    "class-name": true, //class & interface首字母大写
+    "member-access": true, //  类成员必须声明 private public ....
+    "new-parens": true,  //禁止省略new关键字的圆括号
+    "no-consecutive-blank-lines": true,  // 不允许空行
+    "no-reference": true,  //  禁止使用/// <reference path=> 导入 ，使用import代替
+    "one-variable-per-declaration": [true, "ignore-for-loop"],  // 禁止一次定义声明多个变量(for循环里允许)
+    "one-line": [  // 要求指定的标记与它们之前的表达式位于同一行
       true,
       "check-catch",
       "check-finally",
@@ -79,14 +84,20 @@
       "check-open-brace",
       "check-whitespace"
     ],
-    "promise-function-async": false,
-    "quotemark": [true, "single", "avoid-escape", "jsx-double"],
-    "semicolon": [true, "always"],
-    "variable-name": [true, "ban-keywords"],
-    "object-curly-spacing": true,
-    "array-bracket-spacing": [
-        true,
-        "never"
+    "promise-function-async": true,  // 要求所有返回promise的函数或方法前面都加上async
+    "quotemark": [true, "single", "avoid-escape", "jsx-double"],  // 引号的使用规则
+    "semicolon": [true, "always"],  // 分号的使用规则
+    "variable-name": [true, "ban-keywords"], // 变量命名规则
+    "object-curly-spacing": [  // 大括号前后是否留空格
+      true,
+      "always",
+      {
+        "objectsInObjects": false // 大括号与大括号之间时不留
+      }
+    ],
+    "array-bracket-spacing": [  // 数组前后的空格
+      true,
+      "never"
     ]
   }
 }
