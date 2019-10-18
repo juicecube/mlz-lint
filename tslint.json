@@ -3,7 +3,7 @@
     "tslint-eslint-rules"
   ],
   "rules": {
-    "no-parameter-reassignment": true, // 不允许变量再分配
+    "no-parameter-reassignment": true, // 禁止对函数的参数重新赋值
     "comment-format": [true, "check-space"], // 所有单行注释开头都需要一个空格
     "object-literal-shorthand": true,  // 必须使用 `a = {b}` 而不是 `a = {b: b}`
     "no-magic-numbers": [true, {"allowed-numbers": [ 0, 1, 10, 100, 1000, 10000, 200], "ignore-jsx": true}], // 禁止使用魔法数字
