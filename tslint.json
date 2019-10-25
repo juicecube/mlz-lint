@@ -1,6 +1,8 @@
 {
   "extends": [
-    "tslint-eslint-rules"
+    "tslint-eslint-rules",
+    "tslint:recommended",
+    "tslint-config-prettier"
   ],
   "rules": {
     "no-parameter-reassignment": true, // 禁止对函数的参数重新赋值
@@ -87,7 +89,7 @@
     "promise-function-async": true,  // 要求所有返回promise的函数或方法前面都加上async
     "quotemark": [true, "single", "avoid-escape", "jsx-double"],  // 引号的使用规则
     "semicolon": [true, "always"],  // 分号的使用规则
-    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"], // 变量命名规则
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"], // 变量命名规则
     "object-curly-spacing": [  // 大括号前后是否留空格
       true,
       "always",

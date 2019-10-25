@@ -56,6 +56,14 @@
     // 自定义
   }
 }
+
+// prettier.config.js
+{
+  module.exports = {
+  ...require("mlz-lint/prettier.config.js"),
+  // 自定义
+};
+}
 ``` 
 
 #### Prettier集成
