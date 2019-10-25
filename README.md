@@ -6,6 +6,29 @@
 一个包含eslint，stylelint, tsconfig的配置文件合集。方便不同项目间统一和共享ts规范。
 下面是在当前项目中新添加的配置。
 
+#### Usage
+- `npm i -D @mlz/lint`
+
+```js
+// tsconfig.json
+{
+  "extends": "./node_modules/@mlz/lint/tsconfig.json",
+  "compilerOptions": {
+    // 自定义
+  }
+}
+
+// tslint.json
+{
+  "extends": [
+    "@mlz/lint/tslint.json", 
+  ],
+  "rules": {
+    // 自定义
+  }
+}
+``` 
+
 #### tsconfig  
 |  配置  | 值 | 原因 |
 |  ----  | ----  | ---- |
@@ -29,34 +52,10 @@
 | experimentalDecorators | true | 启用装饰器
 
 
-
 #### tslint
 
 详情请见tslint.json
 
-
-#### Usage
-- `npm i -D mlz-lint`
-
-```js
-// tsconfig.json
-{
-  "extends": "./node_modules/mlz-lint/tsconfig.json",
-  "compilerOptions": {
-    // 自定义
-  }
-}
-
-// tslint.json
-{
-  "extends": [
-    "mlz-lint/tslint.json", 
-  ],
-  "rules": {
-    // 自定义
-  }
-}
-``` 
 
 #### Prettier集成
 
