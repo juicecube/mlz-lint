@@ -56,7 +56,16 @@
     // 自定义
   }
 }
+``` 
 
+#### Prettier集成
+
+1、安装vscode的Prettier插件”Prettier - Code formatter“
+2、在在项目根目录下新建prettier.config.js文件
+3、将如下配置放到文件中并保存
+4、右键"Format Document"来帮助你完善代码风格
+
+```js
 // prettier.config.js
 {
   module.exports = {
@@ -64,9 +73,6 @@
   // 自定义
 };
 }
-``` 
-
-#### Prettier集成
-
+```
 
 
