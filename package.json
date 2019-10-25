@@ -1,5 +1,5 @@
 {
-  "name": "mlz-lint",
+  "name": "@mlz/lint",
   "version": "1.0.2",
   "description": "一个包含eslint，stylelint, tsconfig的配置文件合集",
   "main": "index.js",
