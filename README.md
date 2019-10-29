@@ -59,16 +59,18 @@
 
 #### Prettier集成
 
-1、安装vscode的Prettier插件”Prettier - Code formatter“
-2、在在项目根目录下新建prettier.config.js文件
-3、将如下配置放到文件中并保存
-4、右键"Format Document"来帮助你完善代码风格
+- 安装vscode的Prettier插件”Prettier - Code formatter“
+- 在在项目根目录下新建prettier.config.js文件
+- 将如下配置放到文件中并保存
+- 右键"Format Document"来帮助你完善代码风格
+
+具体配置项请参考： https://prettier.io/docs/en/options.html#bracket-spacing
 
 ```js
 // prettier.config.js
 {
   module.exports = {
-  ...require("mlz-lint/prettier.config.js"),
+  ...require("@mlz/lint/prettier.config.js"),
   // 自定义
 };
 }
