@@ -9,15 +9,21 @@
 #### Usage
 - `npm i -D @mlz/lint`
 
+- 在项目根目录新建tsconfig.json文件，并写入下面👇代码
+
 ```js
 // tsconfig.json
 {
   "extends": "./node_modules/@mlz/lint/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".", // 必填
     // 自定义
-  }
+  },
 }
+``` 
+- 在项目根目录新建tslint.json文件，并加入下面👇代码
 
+```js
 // tslint.json
 {
   "extends": [
