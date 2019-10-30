@@ -1,6 +1,6 @@
 {
   "name": "@mlz/lint",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "一个包含eslint，stylelint, tsconfig的配置文件合集",
   "main": "index.js",
   "dependencies": {
