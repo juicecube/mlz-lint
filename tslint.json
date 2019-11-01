@@ -5,6 +5,8 @@
     "tslint-config-prettier"
   ],
   "rules": {
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
     "no-parameter-reassignment": true, // 禁止对函数的参数重新赋值
     "comment-format": [true, "check-space"], // 所有单行注释开头都需要一个空格
     "object-literal-shorthand": true,  // 必须使用 `a = {b}` 而不是 `a = {b: b}`
