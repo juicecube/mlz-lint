@@ -4,11 +4,11 @@
   "description": "一个包含eslint，stylelint, tsconfig的配置文件合集",
   "main": "index.js",
   "dependencies": {
-    "tslint-eslint-rules": "^5.4.0"
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-config-prettier": "^1.18.0"
   },
   "devDependencies": {
     "tslint": "^5.20.0",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.6.3"
   },
   "scripts": {
