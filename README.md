@@ -1,41 +1,80 @@
 
-
-统一不同项目间的tslint规范，在此规范和react规范的基础上再出一份ts最佳实践的文档。
-
 # mlz-lint
-一个包含eslint，stylelint, tsconfig的配置文件合集。方便不同项目间统一和共享ts规范。
-下面是在当前项目中新添加的配置。
+一个包含eslint（内置tslint规则）、stylelint、tsconfig、prettier的配置文件合集。方便不同项目间统一和共享lint规范。
 
-#### Usage
-- `npm i -D @mlz/lint`
+## Installation
 
-- 在项目根目录新建tsconfig.json文件，并写入下面👇代码
+`npm i -D @mlz/lint`
+
+#### 以下根据实际情况选择性安装
+
+`npm i -D eslint stylelint typescript prettier`
+
+## Usage
+mlz-lint的使用有两种方式
+#### 一、通过 `yuumi` 插件安装使用（待补充）
+
+#### 二、项目直接继承 `mlz-lint` 配置
+
+- typescript：在项目根目录新建 `tsconfig.json` 文件，并写入下面👇代码
 
 ```js
 // tsconfig.json
 {
-  "extends": "./node_modules/@mlz/lint/tsconfig.json",
+  "extends": "@mlz/lint/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".", // 必填
     // 自定义
-  },
+  }
 }
 ``` 
-- 在项目根目录新建tslint.json文件，并加入下面👇代码
+- eslint（内置tslint规则）：在项目根目录新建 `.eslintrc.js` 文件，并加入下面👇代码
 
 ```js
-// tslint.json
-{
-  "extends": [
-    "@mlz/lint/tslint.json", 
-  ],
+// .eslintrc.js
+module.exports = {
+  "extends": "./node_modules/@mlz/lint/ts-eslintrc.js",
   "rules": {
     // 自定义
   }
 }
 ``` 
 
+- eslint && react(内置tslint规则) ：在项目根目录新建 `.eslintrc.js` 文件，并加入下面👇代码
+```js
+// .eslintrc.js
+module.exports = {
+  "extends": "./node_modules/@mlz/lint/ts-eslintrc-react.js",
+  "rules": {
+    // 自定义
+  }
+}
+```
+
+- stylelint：在项目根目录新建 `.stylelintrc.json` 文件，并加入下面👇代码（注意配置 `.stylelintignore` 文件，可参照本项目 `.stylelintignore` 文件）
+
+```js
+// .stylelintrc.json
+{
+  "extends": "@mlz/lint/stylelintrc.json",
+  "rules": {
+    // 自定义
+  }
+}
+```
+
+## AutoFix
+
+
+
+
+
+## 配置说明
+
 #### tsconfig  
+
+详情请见：tsconfig.json
+
 |  配置  | 值 | 原因 |
 |  ----  | ----  | ---- |
 | target  | es2015 | 保留import语法，以便实现模块按需加载，配合`@babel/preset-env`
@@ -57,10 +96,17 @@
 | allowSyntheticDefaultImports | true | 允许从没有设置默认导出的模块中默认导入
 | experimentalDecorators | true | 启用装饰器
 
+#### eslint
 
-#### tslint
+详情请见ts-eslintrc.js、ts-eslintrc-react.js
 
-详情请见tslint.json
+#### stylelint
+
+官方标准 + 些许自定义，详情请见：
+- [官方](https://github.com/stylelint/stylelint-config-standard/blob/master/index.js#L15:5)
+
+-  自定义：stylelintrc.json
+
 
 
 #### Prettier集成
