@@ -13,9 +13,7 @@
       ],
       "ignore": ["after-comment"]
     } ],
-    "block-closing-brace-space-before": "always",
-    "block-opening-brace-space-after": "always",
-    "color-hex-case": "lower",
+    "color-hex-case": null,
     "function-parentheses-newline-inside": "never-multi-line",
     "selector-pseudo-element-colon-notation": "double",
     "selector-type-case": "lower"
