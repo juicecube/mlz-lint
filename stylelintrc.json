@@ -3,6 +3,9 @@
     "stylelint-config-standard",
     "stylelint-config-prettier"
   ],
+  "plugins": [
+    "stylelint-scss"
+  ],
   "rules": {
     "at-rule-empty-line-before": [ "always", {
       "except": [
@@ -13,9 +16,17 @@
       ],
       "ignore": ["after-comment"]
     } ],
+    "at-rule-no-unknown": null,
+    "max-nesting-depth": ["always", { "int": 4 }],
     "color-hex-case": null,
     "function-parentheses-newline-inside": "never-multi-line",
     "selector-pseudo-element-colon-notation": "double",
-    "selector-type-case": "lower"
+    "selector-type-case": "lower",
+    "scss/at-rule-no-unknown": [true, {
+      "ignoreAtRules": [
+        "/^my-/",
+        "/^:global/"
+      ]
+    }]
   }
 }
