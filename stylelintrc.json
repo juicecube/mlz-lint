@@ -17,7 +17,12 @@
       "ignore": ["after-comment"]
     } ],
     "at-rule-no-unknown": null,
-    "max-nesting-depth": ["always", { "int": 4 }],
+    "max-nesting-depth": [4, {
+      "ignore": [
+        "blockless-at-rules",
+        "pseudo-classes"
+      ]
+    }],
     "color-hex-case": null,
     "function-parentheses-newline-inside": "never-multi-line",
     "selector-pseudo-element-colon-notation": "double",
