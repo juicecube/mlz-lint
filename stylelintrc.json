@@ -28,16 +28,14 @@
     "function-parentheses-newline-inside": "never-multi-line",
     "selector-pseudo-element-colon-notation": "double",
     "selector-type-case": "lower",
-    "selector-pseudo-class-no-unknown": [true, {
-      "ignorePseudoClasses": [
-        "global"
-      ]
-    }],
     "no-descending-specificity": null,
     "scss/at-rule-no-unknown": [true, {
       "ignoreAtRules": [
         "/^my-/"
       ]
+    }],
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": [ "global"]
     }]
   }
 }
