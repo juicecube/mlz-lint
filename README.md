@@ -6,10 +6,14 @@
 
 `npm i -D @mlz/lint`
 
-#### 以下根据实际情况选择性安装
+#### 1、安装相应的代码检查工具
+以下根据实际情况选择性安装
 
-`npm i -D eslint stylelint typescript prettier`
+- `npm i -D eslint stylelint typescript`
 
+#### 2、安装编辑器对应插件
+
+--- 
 ## Usage
 mlz-lint的使用有两种方式
 #### 一、通过 `yuumi` 插件安装使用（待补充）
@@ -63,14 +67,40 @@ module.exports = {
 }
 ```
 
+#### 不生效可能原因及解决方法：
+- 1、eslint未启用或执行报错：
+
+  调出eslint控制台（点击vscode右下角eslint打开控制台， 如找不到，则，点击左下角设置按钮 --> 选择setting --> 输入eslint --> 把 ```Eslint:Always Show Status``` 和 ```Eslint:Enable```勾选上 --> 点击任意js或ts文件则会出现，若还未出现请升级vscode版本），查看是否执行过程中出现错误
+
+
+- 2、vscode版本过低（请升级到1.41.1或以上）
+
+  mac中如果遇到无法升级，则确认```vscode```是否在应用程序中，如不在则手动把```vscode```移到应用程序中方可进行升级
+
+---
 ## AutoFix
 
+1、打开编辑器设置文件（以vscode为例）：
+```js
+command + P  -->  输入setting  --> 选择 settings.json文件
+```
 
+2、在文件中添加如下代码并保存：
+```js
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+  },
+```
+3、修改文件后保存，便会自动修复空格、顺序等风格问题
 
-
-
+---
 ## 配置说明
+++++++
 
+该项目中的配置为公司前端统一配置，除一些标明可自定义的配置外，其他配置最好不要随意更改，以保持前端代码风格的统一
+
+++++++
 #### tsconfig  
 
 详情请见：tsconfig.json
@@ -105,27 +135,5 @@ module.exports = {
 官方标准 + 些许自定义，详情请见：
 - [官方](https://github.com/stylelint/stylelint-config-standard/blob/master/index.js#L15:5)
 
--  自定义：stylelintrc.json
-
-
-
-#### Prettier集成
-
-- 安装vscode的Prettier插件”Prettier - Code formatter“
-- 在在项目根目录下新建prettier.config.js文件
-- 将如下配置放到文件中并保存
-- 右键"Format Document"来帮助你完善代码风格
-
-具体配置项请参考： https://prettier.io/docs/en/options.html#bracket-spacing
-
-```js
-// prettier.config.js
-{
-  module.exports = {
-  ...require("@mlz/lint/prettier.config.js"),
-  // 自定义
-};
-}
-```
-
+-  自定义： 详见`stylelintrc.json`
 
