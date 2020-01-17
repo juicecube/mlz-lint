@@ -168,9 +168,9 @@ module.exports = {
     "@typescript-eslint/no-inferrable-types": 0, // 不允许对初始化为数字，字符串或布尔值的变量或参数进行显式类型声明
 
     // ============React规则=============
-    "react/default-props-match-prop-types": 1, // 有默认值的属性必须在propTypes中指定
+    "react/default-props-match-prop-types": 1, // 有默认值的属性必须在propTypes中指定  --CUSTOM
     "react/no-array-index-key": 1, // 不要使用数组索引作为key，尽可能使用ID
-    "react/no-multi-comp": 1, // 一个文件只能存在一个组件
+    "react/no-multi-comp": 1, // 一个文件只能存在一个组件 --CUSTOM
     "react/no-unused-prop-types": 1, // 禁止未使用的prop参数
     "react/prefer-es6-class": 1, // 强制使用es6 extend方法创建组件
     "react/require-default-props": 1, // 非require的propTypes必须制定默认值
@@ -199,7 +199,7 @@ module.exports = {
     ],
   
     "react-hooks/rules-of-hooks": 2, // 检查 Hook 的规则
-    "react-hooks/exhaustive-deps": 1, // 检查 Effect 的依赖
+    "react-hooks/exhaustive-deps": 0, // 检查 Effect 的依赖（autofix时会自动添加依赖，不安全，故关掉） --CUSTOM
   },
   overrides: [ // 为.js文件设置覆盖规则
     {
