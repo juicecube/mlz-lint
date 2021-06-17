@@ -1,3 +1,12 @@
+/**
+ *
+ * https://eslint.org/docs/user-guide/getting-started
+ * https://cn.eslint.org/docs/user-guide/getting-started
+ * 规则中第一个参数可以用字符串也可以用数字，例如： "eol-last": ["error", "always"]  或者  "eol-last": [2, "always"]
+ * "off" or 0 - 关闭规则
+ * "warn" or 1 - 将规则视为一个警告（不会影响退出码）
+ * "error" or 2 - 将规则视为一个错误 (退出码为1)
+ */
 module.exports = {
   env: {
     browser: true,
@@ -13,8 +22,6 @@ module.exports = {
 
     // 关闭eslint配置中与prettier冲突的格式化规则
     "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
   ],
   globals: {
     Atomics: "readonly",
@@ -47,13 +54,31 @@ module.exports = {
      * 注释中以‘CUSTOM’结尾的规则为可自定义规则（具体项目可自行调整）
      * 其余注释各业务方请不要随意配置，以规范为准
      * 以@typescript-eslint开头的规则由@typescript-eslint插件提供，用于检测ts
-     * 
+     *
      */
 
     // ============命名=============
     "camelcase": "off",
-    "@typescript-eslint/camelcase": [2, { "properties": "always" }], // 强制使用驼峰命名  --CUSTOM
-    "@typescript-eslint/class-name-casing": [2, { "allowUnderscorePrefix": false }], // class和interface采用帕斯卡命名(不允许下划线)
+    "@typescript-eslint/naming-convention": [
+      2,
+      {
+        "selector": "property",
+        "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+        "leadingUnderscore": 'allow',
+      }, // 强制使用驼峰、帕斯卡、常量大写命名  --CUSTOM
+      {
+        "selector": "interface",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "typeAlias",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "class",
+        "format": ["PascalCase"]
+      }, // class和interface采用帕斯卡命名(不允许下划线)
+    ],
     "@typescript-eslint/interface-name-prefix": 0, // interface命名必须以I开头
 
     // ============空格 && 缩进=============
@@ -101,13 +126,7 @@ module.exports = {
 
     // ============符号相关=============
     "comma-style": [2, "last"], // 逗号规则
-    "comma-dangle": [2, { // 行末尾必须有逗号
-      "functions": "always-multiline",
-      "arrays": "always-multiline",
-      "objects": "always-multiline",
-      "imports": "always-multiline",
-      "exports": "always-multiline",
-    }], 
+    "comma-dangle": [2, "always-multiline"],// 行末尾必须有逗号
     "semi-style": [2, "last"], // 强制分号的位置
     "semi": [2, "always"], // 语句必须分号结尾
     "jsx-quotes": [2, "prefer-double"], // JSX元素中的字符串必须使用双引号
@@ -146,11 +165,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-assertions": 1, // 强制规范类型定义的方式  --CUSTOM
     "@typescript-eslint/no-this-alias": 1, // 禁止对this使用别名  --CUSTOM
     "@typescript-eslint/no-namespace": 1, // 禁止使用自定义TypeScript模块和名称空间  --CUSTOM
-    "@typescript-eslint/no-unused-vars": [1, { // 禁止使用未使用的变量  --CUSTOM
-      "vars": "all",
-      "args": "none",
-      "ignoreRestSliblings": true,
-    }],
+    "@typescript-eslint/no-unused-vars": [1, { "vars": "all", "args": "none", "ignoreRestSiblings": true }],// 提示未使用的变量  --CUSTOM
     "no-undef": 0, // 禁用未声明的变量，除非它们在 /*global */ 注释中被提到 （原因：全局变量较常用，定义在global.d.ts中即可）
     "no-constant-condition": 0, // 禁止在条件中使用常量表达式
     "prefer-spread": 0,  // 要求使用扩展运算符而非 .apply()
