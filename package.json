@@ -1,6 +1,6 @@
 {
   "name": "@mlz/lint",
-  "version": "1.1.10",
+  "version": "1.2.0",
   "description": "一个包含eslint，stylelint, tsconfig的配置文件合集",
   "main": "index.js",
   "dependencies": {
@@ -23,7 +23,8 @@
     "typescript": "^3.6.3"
   },
   "scripts": {
-    "test": "./node_modules/tslint/bin/tslint -p tsconfig.json -c tslint.json test.ts"
+    "test": "./node_modules/tslint/bin/tslint -p tsconfig.json -c tslint.json test.ts",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -34,5 +35,8 @@
   "bugs": {
     "url": "https://github.com/juicecube/mlz-lint/issues"
   },
-  "homepage": "https://github.com/juicecube/mlz-lint#readme"
+  "homepage": "https://github.com/juicecube/mlz-lint#readme",
+  "devDependencies": {
+    "standard-version": "^9.3.0"
+  }
 }
