@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/juicecube/mlz-lint/compare/v1.2.0...v1.2.1) (2021-06-21)
+
+
+### Bug Fixes
+
+* add stylelint in dependencies ([761b1f8](https://github.com/juicecube/mlz-lint/commit/761b1f87ecc5310beb225571ea29663b91f248b4))
+
 ## 1.2.0 (2021-06-18)
 
 
