@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/juicecube/mlz-lint/compare/v1.2.1...v1.2.3) (2022-09-28)
+
+
+### Features
+
+* stylelint 缩进 ([4f3299a](https://github.com/juicecube/mlz-lint/commit/4f3299a9103483018ea2ef5bf8a3463f27dd0250))
+
+
+### Bug Fixes
+
+* update stylelint ([033274f](https://github.com/juicecube/mlz-lint/commit/033274f358a95a2609addbbd099a4d7dbec7dcd7))
+
 ### [1.2.2](https://github.com/juicecube/mlz-lint/compare/v1.2.1...v1.2.2) (2021-12-01)
 
 
